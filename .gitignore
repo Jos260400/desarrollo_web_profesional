@@ -1,0 +1,12 @@
+# archivos que genera el sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# configuracion local del editor
+.vscode/
+.idea/
+
+# archivos temporales
+*.log
+*.tmp

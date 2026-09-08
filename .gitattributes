@@ -1,0 +1,12 @@
+# Normaliza el fin de linea en todas las plataformas.
+# Evita que Windows y macOS marquen diferencias que nadie escribio.
+* text=auto
+
+# Archivos binarios: Git no debe tocarlos.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
