@@ -27,3 +27,4 @@ qué defectos se encontraron al revisar y qué se corrigió a mano.
 |-------|-------------|--------------|-----------------|
 |       |             |              |                 |
  
+ 
