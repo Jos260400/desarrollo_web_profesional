@@ -1,3 +1,126 @@
-/* Hoja de estilos del proyecto.
-   Se empieza a trabajar en la sesión 3.
-   Las reglas se escriben debajo de este comentario. */
+/* ===== Estilos generales ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #f4f8fc;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #0b3d91;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* ===== Navegación ===== */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #ffffff;
+  color: #0b3d91;
+}
+
+/* ===== Main / Contenido ===== */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #ffffff;
+  border: 1px solid #cfe0f5;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(11, 61, 145, 0.08);
+}
+
+section h2 {
+  color: #0b3d91;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #0b3d91;
+  padding-bottom: 8px;
+}
+
+section p {
+  margin-bottom: 10px;
+}
+
+/* ===== Formularios ===== */
+form label {
+  font-weight: bold;
+  color: #0b3d91;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #a9c4e8;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #0b3d91;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table td {
+  padding: 8px 0;
+}
+
+button {
+  background-color: #0b3d91;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #092d6b;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #0b3d91;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
