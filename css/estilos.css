@@ -1,4 +1,22 @@
-/* ===== Estilos generales ===== */
+/* =====================================================
+   Sitio personal — Ing. Fernando José Garavito Ovando
+   Paleta: pizarra/índigo + cobre, tipografía Fraunces + Inter
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --tinta:        #1b2230;
+  --tinta-suave:  #4a5468;
+  --pizarra:      #202a3f;
+  --pizarra-osc:  #171f30;
+  --cobre:        #c46a3d;
+  --cobre-osc:    #a8552d;
+  --fondo:        #f2ede5;
+  --superficie:   #fffdf9;
+  --borde:        #e2d8c8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,121 +24,187 @@
 }
 
 body {
-  font-family: "Georgia", "Times New Roman", serif;
-  background-color: #f4f8fc;
-  color: #1a1a1a;
-  line-height: 1.6;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: var(--fondo);
+  color: var(--tinta);
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", "Georgia", serif;
+  font-weight: 600;
+  color: var(--tinta);
 }
 
 /* ===== Header ===== */
 header {
-  background-color: #0b3d91;
-  color: #ffffff;
-  padding: 30px 20px;
+  background-color: var(--pizarra);
+  color: #f2ede5;
+  padding: 44px 20px 30px;
   text-align: center;
+  border-bottom: 3px solid var(--cobre);
 }
 
 header h1 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 18px;
 }
 
 /* ===== Navegación ===== */
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.1rem;
-  padding: 6px 14px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
-nav a:hover {
-  background-color: #ffffff;
-  color: #0b3d91;
+nav a {
+  color: #d8dce6;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #ffffff;
+  border-color: var(--cobre);
+  background-color: rgba(196, 106, 61, 0.18);
 }
 
 /* ===== Main / Contenido ===== */
 main {
-  max-width: 800px;
-  margin: 40px auto;
+  max-width: 760px;
+  margin: 48px auto;
   padding: 0 20px;
 }
 
 section {
-  background-color: #ffffff;
-  border: 1px solid #cfe0f5;
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 6px rgba(11, 61, 145, 0.08);
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  border-left: 4px solid var(--cobre);
+  padding: 34px 36px;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 3px rgba(23, 31, 48, 0.06);
 }
 
 section h2 {
-  color: #0b3d91;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #0b3d91;
-  padding-bottom: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--borde);
 }
 
 section p {
-  margin-bottom: 10px;
+  color: var(--tinta-suave);
+  margin-bottom: 12px;
+  max-width: 65ch;
+}
+
+section ul {
+  color: var(--tinta-suave);
+  margin: 10px 0 10px 22px;
+}
+
+section ul li {
+  margin-bottom: 6px;
 }
 
 /* ===== Formularios ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 440px;
+}
+
 form label {
-  font-weight: bold;
-  color: #0b3d91;
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--pizarra);
+  margin-bottom: 6px;
 }
 
 form input,
 form textarea {
   width: 100%;
-  max-width: 400px;
-  padding: 8px 10px;
-  margin-top: 5px;
-  border: 1px solid #a9c4e8;
+  padding: 11px 13px;
+  border: 1px solid var(--borde);
   border-radius: 6px;
+  background-color: #fffdf9;
   font-family: inherit;
   font-size: 1rem;
+  color: var(--tinta);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 110px;
 }
 
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: #0b3d91;
+  border-color: var(--cobre);
+  box-shadow: 0 0 0 3px rgba(196, 106, 61, 0.15);
 }
 
-table {
-  border-collapse: collapse;
-  margin-bottom: 15px;
-}
-
-table td {
-  padding: 8px 0;
+form input::placeholder,
+form textarea::placeholder {
+  color: #a9a196;
 }
 
 button {
-  background-color: #0b3d91;
+  align-self: flex-start;
+  background-color: var(--cobre);
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 26px;
   border-radius: 6px;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: #092d6b;
+button:hover,
+button:focus-visible {
+  background-color: var(--cobre-osc);
 }
 
 /* ===== Footer ===== */
 footer {
-  background-color: #0b3d91;
-  color: #ffffff;
+  background-color: var(--pizarra-osc);
+  color: #b9bfcc;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 22px;
+  font-size: 0.9rem;
+}
+
+/* ===== Accesibilidad y responsive ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cobre);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.6rem; }
+  section { padding: 24px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
