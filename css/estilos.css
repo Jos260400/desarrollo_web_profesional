@@ -119,6 +119,34 @@ section ul li {
   margin-bottom: 6px;
 }
 
+/* ===== Tarjetas de proyectos ===== */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tarjetas article {
+  background-color: var(--fondo);
+  border: 1px solid var(--borde);
+  border-top: 3px solid var(--cobre);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.tarjetas article h3 {
+  font-family: "Fraunces", "Georgia", serif;
+  font-size: 1.1rem;
+  color: var(--pizarra);
+  margin-bottom: 10px;
+}
+
+.tarjetas article p {
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
 /* ===== Formularios ===== */
 form {
   display: flex;
