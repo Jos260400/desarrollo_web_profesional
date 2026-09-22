@@ -19,7 +19,11 @@
   <main>
     <section>
       <h2>Perfil profesional</h2>
-      <p>Ingeniero de sistemas con interés en administración de redes, automatización y seguridad informática.</p>
+      <div class="texto-expandible" id="bio-texto">
+        <p>Ingeniero de sistemas con interés en administración de redes, automatización y seguridad informática. A lo largo de mi formación y experiencia práctica he trabajado en el diseño y mantenimiento de infraestructuras de red, la configuración de servidores y la implementación de buenas prácticas de seguridad para proteger la información.</p>
+        <p>Me apasiona automatizar procesos repetitivos mediante scripts y herramientas que reducen errores humanos y ahorran tiempo, así como mantenerme actualizado en temas de ciberseguridad, hardening de sistemas y análisis de vulnerabilidades. Disfruto también compartir lo que aprendo y colaborar en proyectos donde la tecnología resuelve problemas reales.</p>
+      </div>
+      <button type="button" class="btn-expandir" id="bio-boton" data-toggle="bio-texto" data-expand-class="expandido" aria-expanded="false" aria-controls="bio-texto">Mostrar más</button>
     </section>
 
     <section>
@@ -29,6 +33,16 @@
         <li>Automatización de sistemas</li>
         <li>Manejo completo de bases de datos</li>
       </ul>
+      <div class="bloque-oculto" id="servicios-extra">
+        <h3>Herramientas y tecnologías</h3>
+        <ul>
+          <li>Redes: configuración de LAN/WAN, VPN y firewalls</li>
+          <li>Automatización: Python, Bash y tareas programadas</li>
+          <li>Seguridad: hardening de servidores y auditorías básicas</li>
+          <li>Bases de datos: MySQL, PostgreSQL y modelado de datos</li>
+        </ul>
+      </div>
+      <button type="button" class="btn-expandir" id="servicios-boton" data-toggle="servicios-extra" data-expand-class="mostrado" aria-expanded="false" aria-controls="servicios-extra">Mostrar más</button>
     </section>
 
     <section>
@@ -53,5 +67,20 @@
     <p>2026 Ing. Fernando José Garavito Ovando</p>
   </footer>
   <script src="js/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.btn-expandir').forEach(function (boton) {
+        var targetId = boton.getAttribute('data-toggle');
+        var claseExpandir = boton.getAttribute('data-expand-class') || 'expandido';
+        var objetivo = document.getElementById(targetId);
+        if (!objetivo) return;
+        boton.addEventListener('click', function () {
+          var expandido = objetivo.classList.toggle(claseExpandir);
+          boton.setAttribute('aria-expanded', expandido);
+          boton.textContent = expandido ? 'Mostrar menos' : 'Mostrar más';
+        });
+      });
+    });
+  </script>
 </body> 
 </html>
