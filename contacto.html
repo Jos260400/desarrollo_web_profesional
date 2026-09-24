@@ -3,43 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Curso Web Profesional</title>
-  <meta name="description" content="Información de contacto.">
+  <title>Contacto | Fernando Garavito – Ingeniero en Ciencia de la Computación</title>
+  <meta name="description" content="Contacta a Fernando José Garavito Ovando por correo, teléfono o mediante el formulario de contacto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=PT+Serif:wght@400;700&family=UnifrakturMaguntia&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <header>
     <h1>Ing. Fernando José Garavito Ovando</h1>
+    <p class="subtitulo">Ingeniero en Ciencia de la Computación y Tecnologías de la Información</p>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="perfil.html">Perfil</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
     </nav>
   </header>
+
   <main>
     <section>
-      <h2>Contacto</h2>
-      <p>Correo: correo@gmail.com</p>
-      <p>Teléfono: +502 1313-1313</p>
+      <h2><span class="emoji" aria-hidden="true">📬</span> Contacto</h2>
+      <p class="intro">Estoy abierto a oportunidades laborales, proyectos de desarrollo web y colaboraciones en ciberseguridad y visualización de datos. Escríbeme por el medio que te resulte más cómodo; leo todos los mensajes y respondo personalmente.</p>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📧</span> Correo</h3>
+          <p><a href="mailto:joseovando042000@gmail.com">joseovando042000@gmail.com</a></p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📱</span> Teléfono</h3>
+          <p><a href="tel:+50258264903">+502 5826-4903</a></p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📍</span> Ubicación</h3>
+          <p>Ciudad de Guatemala, Guatemala.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🗣️</span> Idiomas</h3>
+          <p>Atiendo en español e inglés.</p>
+        </div>
+      </div>
     </section>
 
     <section>
-      <h2>Formulario de contacto</h2>
-      <form action="#" method="post">
-        <table>
-          <tr>
-            <td><label for="nombre">Nombre:</label></td>
-            <td><input type="text" id="nombre" name="nombre" placeholder="Fulanito Pérez" required></td>
-          </tr>
-        </table>
-        <p>
-          <button type="submit">Enviar</button>
-        </p>
+      <h2><span class="emoji" aria-hidden="true">📝</span> Formulario de contacto</h2>
+      <p>Completa el formulario con una descripción breve de lo que necesitas. El mensaje me llegará directamente a mi correo y te responderé a la dirección que escribas.</p>
+      <!-- Los mensajes se envían con FormSubmit (formsubmit.co) a joseovando042000@gmail.com -->
+      <form action="https://formsubmit.co/joseovando042000@gmail.com" method="POST" id="form-contacto">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Fulanito Pérez" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option>Desarrollo web</option>
+            <option>Mapas y dashboards</option>
+            <option>Bases de datos</option>
+            <option>Ciberseguridad</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="¿En qué te puedo ayudar?" required></textarea>
+        </div>
+        <button type="submit" id="btn-enviar">Enviar mensaje</button>
+        <p class="form-mensaje" id="form-mensaje" role="status" aria-live="polite"></p>
       </form>
     </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">❓</span> Preguntas frecuentes</h2>
+      <details class="faq">
+        <summary>¿Con qué tecnologías trabajas?</summary>
+        <p>Principalmente con Laravel, PHP, Python, JavaScript, PostgreSQL y MongoDB, además de ArcGIS para mapas y dashboards. La lista completa está en la sección de habilidades técnicas de mi perfil.</p>
+      </details>
+      <details class="faq">
+        <summary>¿Puedes comunicarte en inglés?</summary>
+        <p>Sí. Tengo un nivel de inglés avanzado y experiencia brindando soporte técnico en inglés para plataformas globales.</p>
+      </details>
+      <details class="faq">
+        <summary>¿Puedo solicitar referencias?</summary>
+        <p>Sí. Cuento con referencias laborales y académicas que puedo compartir a solicitud durante un proceso de selección.</p>
+      </details>
+      <details class="faq">
+        <summary>¿Qué información debo incluir en mi mensaje?</summary>
+        <p>Una descripción del proyecto o del puesto, los plazos aproximados y la mejor forma de contactarte. Con eso puedo darte una respuesta concreta desde el primer mensaje.</p>
+      </details>
+    </section>
   </main>
+
   <footer>
-    <p>2026 Ing. Fernando José Garavito Ovando</p>
+    <p>&copy; <span id="anio">2026</span> Ing. Fernando José Garavito Ovando</p>
   </footer>
   <script src="js/scripts.js"></script>
 </body>

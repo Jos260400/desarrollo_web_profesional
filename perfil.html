@@ -3,84 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Web Profesional</title>
-  <meta name="description" content="Resumen del sitio en una sola línea.">
+  <title>Perfil | Fernando Garavito – Ingeniero en Ciencia de la Computación</title>
+  <meta name="description" content="Experiencia laboral, formación, habilidades técnicas y proyectos de Fernando José Garavito Ovando, desarrollador web y estudiante de la Maestría en Ciberseguridad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=PT+Serif:wght@400;700&family=UnifrakturMaguntia&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <header>
     <h1>Ing. Fernando José Garavito Ovando</h1>
+    <p class="subtitulo">Ingeniero en Ciencia de la Computación y Tecnologías de la Información</p>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="perfil.html">Perfil</a>
+      <a href="perfil.html" aria-current="page">Perfil</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
+
   <main>
     <section>
-      <h2>Perfil profesional</h2>
+      <h2><span class="emoji" aria-hidden="true">🧑‍💻</span> Perfil profesional</h2>
       <div class="texto-expandible" id="bio-texto">
-        <p>Ingeniero de sistemas con interés en administración de redes, automatización y seguridad informática. A lo largo de mi formación y experiencia práctica he trabajado en el diseño y mantenimiento de infraestructuras de red, la configuración de servidores y la implementación de buenas prácticas de seguridad para proteger la información.</p>
-        <p>Me apasiona automatizar procesos repetitivos mediante scripts y herramientas que reducen errores humanos y ahorran tiempo, así como mantenerme actualizado en temas de ciberseguridad, hardening de sistemas y análisis de vulnerabilidades. Disfruto también compartir lo que aprendo y colaborar en proyectos donde la tecnología resuelve problemas reales.</p>
+        <p class="intro">Ingeniero en Ciencia de la Computación y Tecnologías de la Información, graduado de la Universidad del Valle de Guatemala (colegiado 23931) y estudiante de la Maestría en Ciberseguridad en la Universidad Galileo. Me especializo en el desarrollo web full stack y en la visualización de datos geográficos.</p>
+        <p>Como desarrollador web en la Secretaría Privada de la Presidencia y en CEIBA construí aplicaciones con HTML5, CSS, JavaScript, PHP, Python, PostgreSQL y MongoDB sobre Laravel, además de mapas y dashboards en ArcGIS. Actualmente me desempeño como desarrollador de software en Corporación de Calzado Roy, donde programo aplicaciones web, integro Python y R y administro bases de datos.</p>
+        <p>Antes de dedicarme por completo al desarrollo trabajé varios años en soporte técnico para plataformas globales en empresas como TELUS, InTouch y Alorica. Esa experiencia me enseñó a comunicarme con claridad, a priorizar bajo presión y a entender los problemas desde el punto de vista del usuario.</p>
       </div>
-      <button type="button" class="btn-expandir" id="bio-boton" data-toggle="bio-texto" data-expand-class="expandido" aria-expanded="false" aria-controls="bio-texto">Mostrar más</button>
+      <button type="button" class="btn-expandir" data-toggle="bio-texto" data-expand-class="expandido" aria-expanded="false" aria-controls="bio-texto">Mostrar más</button>
     </section>
 
     <section>
-      <h2>Servicios</h2>
-      <ul>
-        <li>Programación web y movil</li>
-        <li>Automatización de sistemas</li>
-        <li>Manejo completo de bases de datos</li>
+      <h2><span class="emoji" aria-hidden="true">💼</span> Experiencia laboral</h2>
+      <ol class="linea-tiempo">
+        <li>
+          <h3>Desarrollador de Software</h3>
+          <p class="meta"><strong>Corporación de Calzado Roy</strong> · Ago 2026 – Sep 2026</p>
+          <p>Desarrollo de aplicaciones web e integración de lenguajes como Python y R. Configuración y creación de tablas en bases de datos y apoyo en las tareas del departamento de Informática.</p>
+        </li>
+        <li>
+          <h3>Desarrollador Web – Servicios Profesionales</h3>
+          <p class="meta"><strong>Secretaría Privada de la Presidencia</strong> · Ene 2025 – Jun 2026</p>
+          <p>Desarrollo frontend y backend con HTML5, CSS, PHP, Python, JavaScript, MongoDB y PostgreSQL usando Laravel. Creación de mapas y dashboards en ArcGIS Pro, ArcGIS Dashboards y ArcGIS Online.</p>
+        </li>
+        <li>
+          <h3>Desarrollador Web – Servicios Técnicos/Profesionales</h3>
+          <p class="meta"><strong>CEIBA</strong> · Oct 2024 – Dic 2024</p>
+          <p>Desarrollo frontend y backend con HTML5, CSS, PHP, Python, JavaScript, MongoDB y PostgreSQL (Laravel). Implementación de interfaces interactivas y mapas en ArcGIS.</p>
+        </li>
+      </ol>
+      <div class="bloque-oculto" id="experiencia-extra">
+        <ol class="linea-tiempo">
+          <li>
+            <h3>Soporte Técnico – StubHub/Viagogo</h3>
+            <p class="meta"><strong>InTouch</strong> · Mar 2024 – Oct 2024</p>
+            <p>Soporte técnico para una plataforma global de venta de entradas para eventos de entretenimiento.</p>
+          </li>
+          <li>
+            <h3>Soporte Técnico – EBG</h3>
+            <p class="meta"><strong>TELUS</strong> · Dic 2022 – Oct 2023</p>
+            <p>Soporte técnico para una plataforma global de venta de entradas, renta de vehículos y reservación de hoteles.</p>
+          </li>
+          <li>
+            <h3>Programador Web</h3>
+            <p class="meta"><strong>DBG</strong> · Jun 2022 – Dic 2022</p>
+            <p>Desarrollo de una aplicación web para conectar a personas de Guatemala con Estados Unidos.</p>
+          </li>
+          <li>
+            <h3>Soporte Técnico</h3>
+            <p class="meta"><strong>Alorica</strong> · Oct 2020 – May 2022</p>
+            <p>Soporte técnico a clientes mediante canales de voz y chat.</p>
+          </li>
+          <li>
+            <h3>Programador e IT</h3>
+            <p class="meta"><strong>Universidad de San Carlos de Guatemala</strong> · Sep 2017</p>
+            <p>Dirección General Financiera / DPD. Desarrollo de sistemas de procesamiento de datos y análisis de información.</p>
+          </li>
+        </ol>
+      </div>
+      <button type="button" class="btn-expandir" data-toggle="experiencia-extra" data-expand-class="mostrado" aria-expanded="false" aria-controls="experiencia-extra">Mostrar más</button>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🎓</span> Formación y certificaciones</h2>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🛡️</span> Maestría en Ciberseguridad</h3>
+          <p>Universidad Galileo · 2025–2026. En progreso: 21 de 24 cursos aprobados.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🏛️</span> Ingeniería en Ciencia de la Computación y TI</h3>
+          <p>Universidad del Valle de Guatemala · 2018–2024. Pensum cerrado (65 de 65 cursos). Colegiado 23931.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📘</span> Bachillerato en Computación</h3>
+          <p>Bachiller en Ciencias y Letras con Orientación en Computación. Colegio Bilingüe El Prado · 2016–2017.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🔐</span> Enterprise Security Management</h3>
+          <p>Certificado en ciberseguridad. Universidad del Valle de Guatemala · 2025.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🎯</span> Seguridad Ofensiva</h3>
+          <p>Certificado de Hack The Box · 2023.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🧰</span> Habilidades técnicas</h2>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">💻</span> Lenguajes</h3>
+          <ul class="chips chips-sm"><li>Python</li><li>Java</li><li>C++</li><li>C#</li><li>R</li><li>PHP</li><li>JavaScript</li><li>TypeScript</li><li>HTML5</li><li>CSS</li></ul>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🌐</span> Desarrollo web</h3>
+          <ul class="chips chips-sm"><li>Laravel</li><li>React</li><li>Node.js</li><li>Express.js</li><li>Tailwind</li><li>Bootstrap</li></ul>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🗄️</span> Bases de datos</h3>
+          <ul class="chips chips-sm"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Firebase</li><li>SQLite</li><li>phpMyAdmin</li></ul>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🔒</span> Seguridad y redes</h3>
+          <ul class="chips chips-sm"><li>Burp Suite</li><li>Wireshark</li><li>ZAP</li><li>Maltego</li><li>Cisco Packet Tracer</li><li>Cisco Modeling Labs</li><li>Ansible</li><li>MIB Browser</li><li>VMware</li><li>VirtualBox</li></ul>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🐧</span> Linux</h3>
+          <ul class="chips chips-sm"><li>Red Hat</li><li>Ubuntu</li><li>Debian</li><li>Kali</li><li>GNOME</li></ul>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🗺️</span> Herramientas</h3>
+          <ul class="chips chips-sm"><li>ArcGIS Pro</li><li>ArcGIS Dashboards</li><li>ArcGIS Online</li><li>GitHub</li><li>Git Bash</li><li>SCRUM</li><li>Office 365</li><li>NodeXL</li><li>KoboToolbox</li><li>Brandwatch</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🛠️</span> Servicios</h2>
+      <ul class="lista">
+        <li><strong>Desarrollo web full stack.</strong> Sitios y aplicaciones con Laravel, React o Node.js, conectados a bases de datos PostgreSQL, MySQL o MongoDB.</li>
+        <li><strong>Mapas y dashboards.</strong> Visualización geográfica y tableros interactivos en ArcGIS para equipos que toman decisiones con datos.</li>
+        <li><strong>Bases de datos.</strong> Diseño del modelo, creación de tablas, consultas y mantenimiento de bases de datos relacionales y no relacionales.</li>
+        <li><strong>Soporte técnico y mantenimiento.</strong> Diagnóstico de problemas, mantenimiento de sistemas e implementación de mejoras tecnológicas.</li>
       </ul>
-      <div class="bloque-oculto" id="servicios-extra">
-        <h3>Herramientas y tecnologías</h3>
-        <ul>
-          <li>Redes: configuración de LAN/WAN, VPN y firewalls</li>
-          <li>Automatización: Python, Bash y tareas programadas</li>
-          <li>Seguridad: hardening de servidores y auditorías básicas</li>
-          <li>Bases de datos: MySQL, PostgreSQL y modelado de datos</li>
-        </ul>
-      </div>
-      <button type="button" class="btn-expandir" id="servicios-boton" data-toggle="servicios-extra" data-expand-class="mostrado" aria-expanded="false" aria-controls="servicios-extra">Mostrar más</button>
     </section>
 
     <section>
-      <h2>Proyectos</h2>
-      <div class="tarjetas">
-        <article>
-          <h3>Proyecto 1</h3>
-          <p>Descripción breve del proyecto 1.</p>
+      <h2><span class="emoji" aria-hidden="true">🚀</span> Proyectos</h2>
+      <p>Algunos de los proyectos en los que he participado a lo largo de mi experiencia laboral.</p>
+      <div class="rejilla">
+        <article class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🗺️</span> Mapas y dashboards institucionales</h3>
+          <p>Secretaría Privada de la Presidencia. Aplicaciones web con Laravel y tableros geográficos en ArcGIS para el análisis territorial.</p>
+          <ul class="chips chips-sm"><li>Laravel</li><li>PostgreSQL</li><li>ArcGIS</li></ul>
         </article>
-        <article>
-          <h3>Proyecto 2</h3>
-          <p>Descripción breve del proyecto 2.</p>
+        <article class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🧭</span> Interfaces interactivas con mapas</h3>
+          <p>CEIBA. Desarrollo frontend y backend con interfaces interactivas y mapas integrados.</p>
+          <ul class="chips chips-sm"><li>Laravel</li><li>MongoDB</li><li>ArcGIS</li></ul>
         </article>
-        <article>
-          <h3>Proyecto 3</h3>
-          <p>Descripción breve del proyecto 3.</p>
+        <article class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🤝</span> Plataforma Guatemala – Estados Unidos</h3>
+          <p>DBG. Aplicación web para conectar a personas de Guatemala con Estados Unidos.</p>
+          <ul class="chips chips-sm"><li>Aplicación web</li></ul>
         </article>
+        <article class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📈</span> Procesamiento de datos</h3>
+          <p>Universidad de San Carlos de Guatemala. Sistemas de procesamiento y análisis de información financiera.</p>
+          <ul class="chips chips-sm"><li>Análisis de datos</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🗣️</span> Idiomas y competencias</h2>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <h3>Idiomas</h3>
+          <ul class="lista-simple">
+            <li><strong>Español:</strong> nativo</li>
+            <li><strong>Inglés:</strong> avanzado</li>
+            <li><strong>Coreano:</strong> básico</li>
+          </ul>
+        </div>
+        <div class="tarjeta">
+          <h3>Competencias</h3>
+          <ul class="lista-simple">
+            <li>Comunicación efectiva y clara</li>
+            <li>Gestión del tiempo y priorización</li>
+            <li>Pensamiento crítico</li>
+            <li>Soporte técnico</li>
+            <li>Mantenimiento de sistemas</li>
+            <li>Implementación de mejoras tecnológicas</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
+
   <footer>
-    <p>2026 Ing. Fernando José Garavito Ovando</p>
+    <p>&copy; <span id="anio">2026</span> Ing. Fernando José Garavito Ovando</p>
   </footer>
   <script src="js/scripts.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.btn-expandir').forEach(function (boton) {
-        var targetId = boton.getAttribute('data-toggle');
-        var claseExpandir = boton.getAttribute('data-expand-class') || 'expandido';
-        var objetivo = document.getElementById(targetId);
-        if (!objetivo) return;
-        boton.addEventListener('click', function () {
-          var expandido = objetivo.classList.toggle(claseExpandir);
-          boton.setAttribute('aria-expanded', expandido);
-          boton.textContent = expandido ? 'Mostrar menos' : 'Mostrar más';
-        });
-      });
-    });
-  </script>
-</body> 
+</body>
 </html>

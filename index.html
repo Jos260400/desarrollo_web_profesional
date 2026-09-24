@@ -3,27 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Web Profesional</title>
-  <meta name="description" content="Resumen del sitio en una sola línea.">
+  <title>Inicio | Fernando Garavito – Ingeniero en Ciencia de la Computación</title>
+  <meta name="description" content="Sitio personal de Fernando José Garavito Ovando, ingeniero en Ciencia de la Computación y TI: desarrollo web full stack, ciberseguridad, bases de datos y dashboards con ArcGIS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=PT+Serif:wght@400;700&family=UnifrakturMaguntia&display=swap">
   <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <header>
     <h1>Ing. Fernando José Garavito Ovando</h1>
+    <p class="subtitulo">Ingeniero en Ciencia de la Computación y Tecnologías de la Información</p>
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.html" aria-current="page">Inicio</a>
       <a href="perfil.html">Perfil</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
+
   <main>
     <section>
-      <h2>Bienvenido</h2>
-      <p>Este es el sitio web personal donde comparto mi trabajo como ingeniero de sistemas.</p>
+      <h2><span class="emoji saludo" aria-hidden="true">👋</span> Bienvenido</h2>
+      <p class="intro">Soy ingeniero en Ciencia de la Computación y Tecnologías de la Información, graduado de la Universidad del Valle de Guatemala, y actualmente curso la Maestría en Ciberseguridad en la Universidad Galileo. Desarrollo aplicaciones web completas, del frontend al backend, y construyo mapas y dashboards que ayudan a tomar decisiones con datos.</p>
+      <p>He trabajado en instituciones públicas y empresas privadas, desde el soporte técnico para plataformas globales hasta el desarrollo de sistemas con Laravel, PostgreSQL, MongoDB y ArcGIS. En este sitio encontrarás mi trayectoria, las tecnologías que manejo y la forma de contactarme.</p>
+      <ul class="chips">
+        <li>Desarrollo web</li>
+        <li>Ciberseguridad</li>
+        <li>Bases de datos</li>
+        <li>Mapas y dashboards</li>
+      </ul>
+      <div class="acciones">
+        <a class="boton" href="perfil.html">Ver mi perfil</a>
+        <a class="boton boton-secundario" href="contacto.html">Contactarme</a>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🧭</span> Qué hago</h2>
+      <p>Mi experiencia se concentra en cuatro áreas que se complementan: construir sistemas, protegerlos y convertir sus datos en información útil.</p>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🌐</span> Desarrollo web</h3>
+          <p>Sitios y aplicaciones funcionales que integran frontend y backend con bases de datos relacionales y no relacionales, usando Laravel, React y Node.js.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🗺️</span> Mapas y dashboards</h3>
+          <p>Mapas temáticos y tableros interactivos en ArcGIS Pro, Dashboards y Online para el análisis territorial y la toma de decisiones.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">🔒</span> Ciberseguridad</h3>
+          <p>Formación de maestría y práctica en seguridad ofensiva con herramientas como Burp Suite, Wireshark, ZAP y Maltego.</p>
+        </div>
+        <div class="tarjeta">
+          <h3><span class="emoji" aria-hidden="true">📊</span> Análisis de datos</h3>
+          <p>Procesamiento y visualización de datos con Python, R, NodeXL y Excel para generar reportes y conclusiones claras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">🪜</span> Cómo trabajo</h2>
+      <p>Trabajo con metodología ágil SCRUM, con control de versiones y documentación técnica en GitHub, para que cada avance sea visible y cada cambio quede registrado.</p>
+      <ol class="pasos">
+        <li class="paso">
+          <h3>Diagnóstico</h3>
+          <p>Entiendo el problema, a los usuarios y los datos disponibles antes de escribir una línea de código.</p>
+        </li>
+        <li class="paso">
+          <h3>Planificación</h3>
+          <p>Divido el trabajo en entregas cortas con objetivos claros, siguiendo la metodología SCRUM.</p>
+        </li>
+        <li class="paso">
+          <h3>Desarrollo</h3>
+          <p>Programo y pruebo cada parte con control de versiones en Git, integrando frontend, backend y base de datos.</p>
+        </li>
+        <li class="paso">
+          <h3>Entrega y documentación</h3>
+          <p>Entrego la solución funcionando junto con su documentación técnica, lista para recibir mantenimiento.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="emoji" aria-hidden="true">💬</span> ¿Buscas un desarrollador?</h2>
+      <p>Estoy abierto a oportunidades laborales, proyectos de desarrollo web y colaboraciones en ciberseguridad y visualización de datos. Escríbeme y conversemos sobre lo que necesitas.</p>
+      <div class="acciones">
+        <a class="boton" href="contacto.html">Escribirme un mensaje</a>
+      </div>
     </section>
   </main>
+
   <footer>
-    <p>@2026 Ing. Fernando José Garavito Ovando</p>
+    <p>&copy; <span id="anio">2026</span> Ing. Fernando José Garavito Ovando</p>
   </footer>
   <script src="js/scripts.js"></script>
 </body>
