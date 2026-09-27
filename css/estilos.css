@@ -21,6 +21,8 @@
   --borde:        #e2d8c8;
   --verde-suave:  #e8f0e4;
   --sombra-hover: 0 12px 24px rgba(23, 31, 48, 0.14);
+  --color-error:  #a3321f;
+  --color-exito:  var(--pizarra);
 }
 
 * {
@@ -751,10 +753,31 @@ form textarea::placeholder {
   color: #a9a196;
 }
 
+/* ===== Validación del formulario ===== */
+section p.error {
+  color: var(--color-error);
+  font-size: 0.88rem;
+  text-align: left;
+  margin: 6px 0 0;
+  min-height: 1.1rem;   /* reserva el espacio para que el formulario no salte */
+}
+
+form .campo-invalido,
+form .campo-invalido:hover,
+form .campo-invalido:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 1px var(--color-error);
+}
+
+form .campo-invalido:focus {
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
 .form-mensaje {
   display: none;
   text-align: left;
-  color: var(--pizarra);
+  color: var(--color-exito);
   background-color: var(--verde-suave);
   border: 1px solid var(--cobre);
   border-radius: 6px;
@@ -777,11 +800,6 @@ form textarea::placeholder {
   opacity: 0;
 }
 
-button:disabled {
-  opacity: 0.7;
-  cursor: wait;
-  transform: none;
-}
 
 .form-mensaje.visible {
   display: block;
@@ -811,6 +829,16 @@ button:focus-visible {
 }
 
 button:active { transform: translateY(0) scale(0.97); }
+
+/* Va después del hover para que el botón "Enviando…" no se mueva */
+button:disabled,
+button:disabled:hover {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+  background-color: var(--cobre-osc);
+  box-shadow: none;
+}
 
 /* "Mostrar más": se ve como enlace */
 .btn-expandir,

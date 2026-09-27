@@ -50,18 +50,20 @@
       <h2><span class="emoji" aria-hidden="true">📝</span> Formulario de contacto</h2>
       <p>Completa el formulario con una descripción breve de lo que necesitas. El mensaje me llegará directamente a mi correo y te responderé a la dirección que escribas.</p>
       <!-- Los mensajes se envían con FormSubmit (formsubmit.co) a joseovando042000@gmail.com -->
-      <form action="https://formsubmit.co/joseovando042000@gmail.com" method="POST" id="form-contacto">
+      <form action="https://formsubmit.co/joseovando042000@gmail.com" method="POST" id="form-contacto" novalidate>
         <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="campo">
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Fulanito Pérez" autocomplete="name" required>
+          <input type="text" id="nombre" name="nombre" placeholder="Fulanito Pérez" autocomplete="name" aria-describedby="error-nombre" required>
+          <p class="error" id="error-nombre" aria-live="polite"></p>
         </div>
         <div class="campo">
           <label for="correo">Correo</label>
-          <input type="email" id="correo" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+          <input type="email" id="correo" name="email" placeholder="tu@correo.com" autocomplete="email" aria-describedby="error-correo" required>
+          <p class="error" id="error-correo" aria-live="polite"></p>
         </div>
         <div class="campo">
           <label for="asunto">Asunto</label>
@@ -75,7 +77,8 @@
         </div>
         <div class="campo">
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="¿En qué te puedo ayudar?" required></textarea>
+          <textarea id="mensaje" name="mensaje" placeholder="¿En qué te puedo ayudar?" aria-describedby="error-mensaje" required></textarea>
+          <p class="error" id="error-mensaje" aria-live="polite"></p>
         </div>
         <button type="submit" id="btn-enviar">Enviar mensaje</button>
         <p class="form-mensaje" id="form-mensaje" role="status" aria-live="polite"></p>

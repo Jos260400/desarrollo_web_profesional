@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Mapas y dashboards institucionales",
+    "anio": 2025,
+    "institucion": "Secretaría Privada de la Presidencia",
+    "emoji": "🗺️",
+    "descripcion": "Aplicaciones web con Laravel y tableros geográficos en ArcGIS para el análisis territorial.",
+    "tecnologias": ["Laravel", "PostgreSQL", "ArcGIS"]
+  },
+  {
+    "nombre": "Interfaces interactivas con mapas",
+    "anio": 2024,
+    "institucion": "CEIBA",
+    "emoji": "🧭",
+    "descripcion": "Desarrollo frontend y backend con interfaces interactivas y mapas integrados.",
+    "tecnologias": ["Laravel", "MongoDB", "ArcGIS"]
+  },
+  {
+    "nombre": "Plataforma Guatemala – Estados Unidos",
+    "anio": 2022,
+    "institucion": "DBG",
+    "emoji": "🤝",
+    "descripcion": "Aplicación web para conectar a personas de Guatemala con Estados Unidos.",
+    "tecnologias": ["Aplicación web"]
+  },
+  {
+    "nombre": "Procesamiento de datos",
+    "anio": 2017,
+    "institucion": "Universidad de San Carlos de Guatemala",
+    "emoji": "📈",
+    "descripcion": "Sistemas de procesamiento y análisis de información financiera.",
+    "tecnologias": ["Análisis de datos"]
+  }
+]
