@@ -48,9 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // 4. Validación y envío del formulario (contacto.html)
-  //    Primero se valida cada campo; solo si todo está bien se envía con FormSubmit.
+  //    Primero se valida cada campo; si todo está bien, el mensaje se envía
+  //    directo a mi Gmail con Google Apps Script (mi propia cuenta lo envía).
+  //    Si el envío falla, se ofrece abrir la aplicación de correo (mailto).
   var form = document.getElementById('form-contacto');
   if (form) {
+    var CORREO_DESTINO = 'joseovando042000@gmail.com';
+    // URL de la aplicación web de Google Apps Script (termina en /exec)
+    var URL_SCRIPT = 'https://script.google.com/macros/s/AKfycbxqXzecY10QH7rj4tvsnpPObZ3GzUjIu54XsdYYlRr_m78WQuSrJLq-aEVgYZZzxipYjA/exec';
+    var boton = document.getElementById('btn-enviar');
+
     var campoNombre = document.getElementById('nombre');
     var campoCorreo = document.getElementById('correo');
     var campoMensaje = document.getElementById('mensaje');
@@ -58,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var errorCorreo = document.getElementById('error-correo');
     var errorMensaje = document.getElementById('error-mensaje');
     var aviso = document.getElementById('form-mensaje');
-    var boton = document.getElementById('btn-enviar');
 
     // Marca o limpia un campo y escribe su mensaje de error
     function marcar(campo, parrafo, texto) {
@@ -112,6 +118,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
 
+    // Arma el enlace mailto con todos los datos ya escritos
+    function enlaceCorreo(datos) {
+      var cuerpo =
+        'Nombre: ' + datos.nombre + '\n' +
+        'Correo: ' + datos.email + '\n' +
+        'Asunto: ' + datos.asunto + '\n\n' +
+        'Mensaje:\n' + datos.mensaje;
+      return 'mailto:' + CORREO_DESTINO +
+        '?subject=' + encodeURIComponent('Mensaje del sitio web: ' + datos.asunto) +
+        '&body=' + encodeURIComponent(cuerpo);
+    }
+
+    // Muestra el aviso verde con una copia del mensaje enviado
+    function mostrarEnviado(datos) {
+      aviso.textContent = '';
+      aviso.classList.remove('error');
+
+      var titulo = document.createElement('strong');
+      titulo.textContent = '✅ ¡Mensaje enviado con éxito! Ya llegó a mi correo y te responderé pronto.';
+      aviso.appendChild(titulo);
+
+      var resumen = document.createElement('div');
+      resumen.style.marginTop = '10px';
+      [['Nombre', datos.nombre], ['Correo', datos.email], ['Asunto', datos.asunto], ['Mensaje', datos.mensaje]]
+        .forEach(function (fila) {
+          var linea = document.createElement('div');
+          linea.style.whiteSpace = 'pre-line';   // respeta los saltos de línea del mensaje
+          var etiqueta = document.createElement('strong');
+          etiqueta.textContent = fila[0] + ': ';
+          linea.appendChild(etiqueta);
+          linea.appendChild(document.createTextNode(fila[1]));
+          resumen.appendChild(linea);
+        });
+      aviso.appendChild(resumen);
+
+      aviso.classList.remove('visible');
+      void aviso.offsetWidth; // reinicia la animación
+      aviso.classList.add('visible');
+    }
+
+    // Si el envío falla: aviso rojo con un enlace para mandarlo desde su correo
+    function mostrarFallo(datos) {
+      aviso.textContent = 'No se pudo enviar el mensaje automáticamente. ';
+      var enlace = document.createElement('a');
+      enlace.href = enlaceCorreo(datos);
+      enlace.textContent = 'Haz clic aquí para enviarlo desde tu correo';
+      aviso.appendChild(enlace);
+      aviso.appendChild(document.createTextNode(' (ya va escrito), o escríbeme a ' + CORREO_DESTINO + '.'));
+      aviso.classList.add('error');
+      aviso.classList.remove('visible');
+      void aviso.offsetWidth;
+      aviso.classList.add('visible');
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();                 // sin esto la página se recarga
       aviso.classList.remove('visible');  // se limpia el aviso del envío anterior
@@ -127,43 +187,40 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      var nombre = campoNombre.value.trim();
+      var datos = {
+        nombre: campoNombre.value.trim(),
+        email: campoCorreo.value.trim(),
+        asunto: form.asunto.value,
+        mensaje: campoMensaje.value.trim()
+      };
+
+      if (URL_SCRIPT.indexOf('https://script.google.com/') !== 0) {
+        console.error('Falta pegar la URL de Google Apps Script en js/scripts.js');
+        mostrarFallo(datos);
+        return;
+      }
+
       boton.disabled = true;
       boton.textContent = 'Enviando…';
 
-      fetch('https://formsubmit.co/ajax/joseovando042000@gmail.com', {
+      // Envío directo a mi Gmail con Google Apps Script
+      fetch(URL_SCRIPT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          nombre: nombre,
-          email: campoCorreo.value.trim(),
-          asunto: form.asunto.value,
-          mensaje: campoMensaje.value.trim(),
-          _subject: 'Nuevo mensaje del sitio web: ' + form.asunto.value,
-          _template: 'table',
-          _honey: form._honey.value
-        })
+        // Se envía como texto plano para que Google lo acepte sin problemas de CORS
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(datos)
       })
         .then(function (respuesta) {
-          if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status);
-          // Si la respuesta no trae JSON válido, igual se toma como recibida
-          return respuesta.json().catch(function () { return {}; });
-        })
-        .then(function (datos) {
-          console.log('Respuesta de FormSubmit:', datos);
-          var fallo = datos.success === false || datos.success === 'false';
-          var activacion = /activat/i.test(datos.message || '');
-
-          // Solo es error si FormSubmit dice que falló por algo distinto a la activación
-          if (fallo && !activacion) throw new Error(datos.message || 'error desconocido');
-          if (activacion) console.warn('FormSubmit pide activar el formulario para esta dirección:', datos.message);
-
-          mostrarAviso(aviso, '✅ ¡Mensaje enviado con éxito! Gracias, ' + nombre.split(' ')[0] + '. Tu mensaje ya llegó a mi correo y te responderé pronto.', false);
-          form.reset();
+          return respuesta.json().then(function (resultado) {
+            console.log('Respuesta de Google:', resultado);
+            if (!resultado.ok) throw new Error(resultado.error || 'error desconocido');
+            mostrarEnviado(datos);
+            form.reset();
+          });
         })
         .catch(function (error) {
-          console.error('Error al enviar el formulario:', error);
-          mostrarAviso(aviso, 'No se pudo enviar el mensaje. Escríbeme directamente a joseovando042000@gmail.com.', true);
+          console.error('No se pudo enviar el formulario:', error);
+          mostrarFallo(datos);
         })
         .finally(function () {
           boton.disabled = false;

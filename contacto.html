@@ -49,12 +49,8 @@
     <section>
       <h2><span class="emoji" aria-hidden="true">📝</span> Formulario de contacto</h2>
       <p>Completa el formulario con una descripción breve de lo que necesitas. El mensaje me llegará directamente a mi correo y te responderé a la dirección que escribas.</p>
-      <!-- Los mensajes se envían con FormSubmit (formsubmit.co) a joseovando042000@gmail.com -->
-      <form action="https://formsubmit.co/joseovando042000@gmail.com" method="POST" id="form-contacto" novalidate>
-        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <!-- Los mensajes se envían directo a joseovando042000@gmail.com con Google Apps Script (la URL está en js/scripts.js) -->
+      <form action="mailto:joseovando042000@gmail.com" method="POST" enctype="text/plain" id="form-contacto" novalidate>
         <div class="campo">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" placeholder="Fulanito Pérez" autocomplete="name" aria-describedby="error-nombre" required>
